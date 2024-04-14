@@ -1,0 +1,27 @@
+{
+  "auth": "zef:lizmat",
+  "authors": [
+    "Elizabeth Mattijsen"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "Array::Agnostic:ver<0.0.11>:auth<zef:lizmat>"
+  ],
+  "description": "be a list without knowing how",
+  "license": "Artistic-2.0",
+  "name": "List::Agnostic",
+  "perl": "6.d",
+  "provides": {
+    "List::Agnostic": "lib/List/Agnostic.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/lizmat/List-Agnostic.git",
+  "tags": [
+    "UTIL"
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}

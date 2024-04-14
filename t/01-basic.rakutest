@@ -1,0 +1,30 @@
+use Test;
+use List::Agnostic;
+
+plan 16;
+
+my $list = (1, 2, 4, 8, 16, 32, 64, 128);
+
+class MyList does List::Agnostic {
+    method AT-POS(\pos) { $list[pos]  }
+    method elems()      { $list.elems }
+}
+
+my @m is MyList;
+for @m.keys {
+    is @m[$_], 1 +< $_, "does $_ give correct value in MyList";
+}
+
+class MyOtherList does List::Agnostic {
+    has $!list is built;
+    method new($list) { self.bless(:$list) }
+    method AT-POS(\pos) { $!list[pos]  }
+    method elems()      { $!list.elems }
+}
+
+my @o := MyOtherList.new($list);
+for @o.keys {
+    is @o[$_], 1 +< $_, "does $_ give correct value in MyOtherList";
+}
+
+# vim: expandtab shiftwidth=4
