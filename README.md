@@ -8,20 +8,36 @@ List::Agnostic - be a list without knowing how
 SYNOPSIS
 ========
 
-    use List::Agnostic;
-    class MyList does List::Agnostic {
-        method AT-POS() { ... }
-        method elems()  { ... }
-    }
+```rakulang
+use List::Agnostic;
 
-    my @m is MyList = 1,2,3;
+my $list = (1, 2, 4, 8, 16, 32, 64, 128);
 
-    my @m is List::Agnostic = ...;
+class MyList does List::Agnostic {
+    method AT-POS(\pos) { $list[pos]  }
+    method elems()      { $list.elems }
+}
+
+my @m is MyList;                  # static at runtime
+say @m[3];  # 8
+
+class MyOtherList does List::Agnostic {
+    has $!list is built;
+    method new($list) { self.bless(:$list) }
+    method AT-POS(\pos) { $!list[pos]  }
+    method elems()      { $!list.elems }
+}
+
+my @o := MyOtherList.new($list);  # settable at runtime
+say @o[4];  # 16
+```
 
 DESCRIPTION
 ===========
 
 This module makes a `List::Agnostic` role available for those classes that wish to implement the `Positional` role as an immutable `List`. It provides all of the `List` functionality while only needing to implement 4 methods:
+
+Note that contrary to other `Agnostic` modules, this module assumes that there is an existing data structure to which a `Positional` interface is needed.
 
 Required Methods
 ----------------
