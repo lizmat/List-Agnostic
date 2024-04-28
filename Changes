@@ -2,5 +2,8 @@ Revision history for List::Agnostic
 
 {{$NEXT}}
 
+0.0.2  2024-04-28T12:28:24+02:00
+    - Bump dependency on Array::Agnostic
+
 0.0.1  2024-04-14T20:33:27+02:00
     - Initial version

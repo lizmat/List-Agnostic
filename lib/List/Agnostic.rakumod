@@ -1,4 +1,4 @@
-use Array::Agnostic:ver<0.0.11>:auth<zef:lizmat>;
+use Array::Agnostic:ver<0.0.12>:auth<zef:lizmat>;
 
 role List::Agnostic does Array::Agnostic {
     method !cannot(str $action, str $preposition) {
