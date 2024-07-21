@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/lizmat/List-Agnostic/actions/workflows/test.yml/badge.svg)](https://github.com/lizmat/List-Agnostic/actions)
+[![Actions Status](https://github.com/lizmat/List-Agnostic/actions/workflows/linux.yml/badge.svg)](https://github.com/lizmat/List-Agnostic/actions) [![Actions Status](https://github.com/lizmat/List-Agnostic/actions/workflows/macos.yml/badge.svg)](https://github.com/lizmat/List-Agnostic/actions) [![Actions Status](https://github.com/lizmat/List-Agnostic/actions/workflows/windows.yml/badge.svg)](https://github.com/lizmat/List-Agnostic/actions)
 
 NAME
 ====
@@ -44,13 +44,17 @@ Required Methods
 
 ### method AT-POS
 
-    method AT-POS($position) { ... }  # simple case
+```rakulang
+method AT-POS($position) { ... }  # simple case
+```
 
 Return the value at the given position in the list.
 
 ### method elems
 
-    method elems(--> Int:D) { ... }
+```rakulang
+method elems(--> Int:D) { ... }
+```
 
 Return the number of elements in the list (defined as the index of the highest element + 1).
 

@@ -6,7 +6,7 @@
   "build-depends": [
   ],
   "depends": [
-    "Array::Agnostic:ver<0.0.12>:auth<zef:lizmat>"
+    "Array::Agnostic:ver<0.0.13>:auth<zef:lizmat>"
   ],
   "description": "be a list without knowing how",
   "license": "Artistic-2.0",
@@ -23,5 +23,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

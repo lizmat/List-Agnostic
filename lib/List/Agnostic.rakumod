@@ -1,4 +1,4 @@
-use Array::Agnostic:ver<0.0.12>:auth<zef:lizmat>;
+use Array::Agnostic:ver<0.0.13>:auth<zef:lizmat>;
 
 role List::Agnostic does Array::Agnostic {
     method !cannot(str $action, str $preposition) {
@@ -78,13 +78,21 @@ needed.
 
 =head3 method AT-POS
 
-  method AT-POS($position) { ... }  # simple case
+=begin code :lang<rakulang>
+
+method AT-POS($position) { ... }  # simple case
+
+=end code
 
 Return the value at the given position in the list.
 
 =head3 method elems
 
-  method elems(--> Int:D) { ... }
+=begin code :lang<rakulang>
+
+method elems(--> Int:D) { ... }
+
+=end code
 
 Return the number of elements in the list (defined as the index of the
 highest element + 1).
