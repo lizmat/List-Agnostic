@@ -1,6 +1,8 @@
 Revision history for List::Agnostic
 
 {{$NEXT}}
+    - Fix error in handling of .unshift, and add more tests
+    - Update copyright year
 
 0.0.3  2024-07-21T13:20:47+02:00
     - Up dependency on Array::Agnostic

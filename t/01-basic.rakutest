@@ -1,7 +1,7 @@
 use Test;
 use List::Agnostic;
 
-plan 16;
+plan 28;
 
 my $list = (1, 2, 4, 8, 16, 32, 64, 128);
 
@@ -26,5 +26,31 @@ my @o := MyOtherList.new($list);
 for @o.keys {
     is @o[$_], 1 +< $_, "does $_ give correct value in MyOtherList";
 }
+
+throws-like { @o.ASSIGN-POS(1,42) }, X::AdHoc,
+  message => 'Can not assign values in an immutable MyOtherList';
+throws-like { @o.BIND-POS(1,42) }, X::AdHoc,
+  message => 'Can not bind values to an immutable MyOtherList';
+throws-like { @o.DELETE-POS(1) }, X::AdHoc,
+  message => 'Can not remove values from an immutable MyOtherList';
+throws-like { @o.STORE(42, :INITIALIZE) }, X::AdHoc,
+  message => 'Can not initialize values in an immutable MyOtherList';
+
+throws-like { @o.append(42) }, X::AdHoc,
+  message => 'Can not append values to an immutable MyOtherList';
+throws-like { @o.grab(42) }, X::AdHoc,
+  message => 'Can not grab values from an immutable MyOtherList';
+throws-like { @o.prepend(42) }, X::AdHoc,
+  message => 'Can not prepend values to an immutable MyOtherList';
+throws-like { @o.pop }, X::AdHoc,
+  message => 'Can not pop values from an immutable MyOtherList';
+throws-like { @o.push(42) }, X::AdHoc,
+  message => 'Can not push values to an immutable MyOtherList';
+throws-like { @o.shift }, X::AdHoc,
+  message => 'Can not shift values from an immutable MyOtherList';
+throws-like { @o.splice }, X::AdHoc,
+  message => 'Can not splice values from an immutable MyOtherList';
+throws-like { @o.unshift(42) }, X::AdHoc,
+  message => 'Can not unshift values to an immutable MyOtherList';
 
 # vim: expandtab shiftwidth=4

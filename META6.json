@@ -6,9 +6,9 @@
   "build-depends": [
   ],
   "depends": [
-    "Array::Agnostic:ver<0.0.13>:auth<zef:lizmat>"
+    "Array::Agnostic:ver<0.0.13+>:auth<zef:lizmat>"
   ],
-  "description": "be a list without knowing how",
+  "description": "Be a list without knowing how",
   "license": "Artistic-2.0",
   "name": "List::Agnostic",
   "perl": "6.d",

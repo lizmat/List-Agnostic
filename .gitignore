@@ -1,3 +1,4 @@
 .precomp/
 /List-Agnostic-*
 /releases/
+*.rakucov
