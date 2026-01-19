@@ -1,6 +1,8 @@
 Revision history for List::Agnostic
 
 {{$NEXT}}
+
+0.0.5  2026-01-19T23:14:44+01:00
     - Bump dependency on Array::Agnostic, to get stricter
       check on existence of .AT-POS and .elems
     - Update copyright year
