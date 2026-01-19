@@ -1,6 +1,9 @@
 Revision history for List::Agnostic
 
 {{$NEXT}}
+    - Bump dependency on Array::Agnostic, to get stricter
+      check on existence of .AT-POS and .elems
+    - Update copyright year
 
 0.0.4  2025-06-04T17:36:21+02:00
     - Fix error in handling of .unshift, and add more tests

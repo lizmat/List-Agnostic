@@ -7,7 +7,6 @@ List::Agnostic - be a list without knowing how
 =head1 SYNOPSIS
 
 =begin code :lang<rakulang>
-
 use List::Agnostic;
 
 my $list = (1, 2, 4, 8, 16, 32, 64, 128);
@@ -29,7 +28,6 @@ class MyOtherList does List::Agnostic {
 
 my @o := MyOtherList.new($list);  # settable at runtime
 say @o[4];  # 16
-
 =end code
 
 =head1 DESCRIPTION
@@ -48,9 +46,7 @@ needed.
 =head3 method AT-POS
 
 =begin code :lang<rakulang>
-
 method AT-POS($position) { ... }  # simple case
-
 =end code
 
 Return the value at the given position in the list.
@@ -58,9 +54,7 @@ Return the value at the given position in the list.
 =head3 method elems
 
 =begin code :lang<rakulang>
-
 method elems(--> Int:D) { ... }
-
 =end code
 
 Return the number of elements in the list (defined as the index of the
@@ -91,7 +85,7 @@ deal to me!
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2024, 2025 Elizabeth Mattijsen
+Copyright 2024, 2025, 2026 Elizabeth Mattijsen
 
 This library is free software; you can redistribute it and/or modify it under the Artistic License 2.0.
 
