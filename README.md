@@ -35,9 +35,9 @@ say @o[4];  # 16
 DESCRIPTION
 ===========
 
-This module makes a `List::Agnostic` role available for those classes that wish to implement the `Positional` role as an immutable `List`. It provides all of the `List` functionality while only needing to implement 4 methods:
+This module makes a `List::Agnostic` role available for those classes that wish to implement the `Positional` role as an immutable `List`. It provides all of the `List` functionality while only needing to implement 2 methods.
 
-Note that contrary to other `Agnostic` modules, this module assumes that there is an existing data structure to which a `Positional` interface is needed.
+Note that contrary to other `Agnostic` modules, this module assumes that there **is** an existing data structure to which a `Positional` interface is needed.
 
 Required Methods
 ----------------

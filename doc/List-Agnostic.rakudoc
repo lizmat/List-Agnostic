@@ -35,10 +35,10 @@ say @o[4];  # 16
 This module makes a C<List::Agnostic> role available for those classes that
 wish to implement the C<Positional> role as an immutable C<List>.  It
 provides all of the C<List> functionality while only needing to implement
-4 methods:
+2 methods.
 
 Note that contrary to other C<Agnostic> modules, this module assumes that
-there is an existing data structure to which a C<Positional> interface is
+there B<is> an existing data structure to which a C<Positional> interface is
 needed.
 
 =head2 Required Methods
