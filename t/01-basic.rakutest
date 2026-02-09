@@ -3,14 +3,19 @@ use List::Agnostic;
 
 plan 28;
 
-my $list = (1, 2, 4, 8, 16, 32, 64, 128);
-
+my $list;
 class MyList does List::Agnostic {
     method AT-POS(\pos) { $list[pos]  }
     method elems()      { $list.elems }
+    method STORE(\values, :$INITIALIZE) {
+        $INITIALIZE
+          ?? ($list := values.List)
+          !! die "Can not initialize values in an immutable self.^name()";
+        self
+    }
 }
 
-my @m is MyList;
+my @m is MyList = 1, 2, 4, 8, 16, 32, 64, 128;
 for @m.keys {
     is @m[$_], 1 +< $_, "does $_ give correct value in MyList";
 }

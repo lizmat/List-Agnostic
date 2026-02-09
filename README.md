@@ -37,7 +37,7 @@ DESCRIPTION
 
 This module makes a `List::Agnostic` role available for those classes that wish to implement the `Positional` role as an immutable `List`. It provides all of the `List` functionality while only needing to implement 2 methods.
 
-Note that contrary to other `Agnostic` modules, this module assumes that there **is** an existing data structure to which a `Positional` interface is needed.
+Note that if values are specified with the `is Class` syntax, the `STORE` method **must** be implemented.
 
 Required Methods
 ----------------
@@ -57,6 +57,14 @@ method elems(--> Int:D) { ... }
 ```
 
 Return the number of elements in the list (defined as the index of the highest element + 1).
+
+### method STORE
+
+```rakulang
+method STORE(\values, :$INITIALIZE) { ... }
+```
+
+The method is required **if** one wants to be able to initialize using the `is Class` syntax. It should return the invocant.
 
 Optional Methods (provided by role)
 -----------------------------------

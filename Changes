@@ -2,6 +2,12 @@ Revision history for List::Agnostic
 
 {{$NEXT}}
 
+0.0.6  2026-02-09T22:05:04+01:00
+    - Bump dependency on Array::Agnostic, to get STORE
+      method fixes
+    - Make the default STORE method not complain if it's
+      the first initialization and no values were produced
+
 0.0.5  2026-01-19T23:14:44+01:00
     - Bump dependency on Array::Agnostic, to get stricter
       check on existence of .AT-POS and .elems

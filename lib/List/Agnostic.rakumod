@@ -1,7 +1,7 @@
-use Array::Agnostic:ver<0.0.13+>:auth<zef:lizmat>;
+use Array::Agnostic:ver<0.0.17+>:auth<zef:lizmat>;
 
 role List::Agnostic does Array::Agnostic {
-    method !cannot(str $action, str $preposition) {
+    method !cannot(str $action, str $preposition) is hidden-from-backtrace {
         die "Can not $action values $preposition an immutable " ~ self.^name;
     }
 
@@ -15,8 +15,9 @@ role List::Agnostic does Array::Agnostic {
     method BIND-POS(|)   { self!cannot: "bind",       "to"   }
     method DELETE-POS(|) { self!cannot: "remove",     "from" }
 
-    multi method STORE(::?ROLE:D: \iterable, :$INITIALIZE!) {
-        self!cannot: "initialize", "in"   # UNCOVERABLE
+    method STORE(::?ROLE:D: \iterable, :$INITIALIZE!) {
+        my @values = iterable if $INITIALIZE;
+        self!cannot("initialize", "in") if @values;
     }
 
     method append(|)  { self!cannot: "append",  "to"   }
