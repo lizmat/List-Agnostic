@@ -1,7 +1,7 @@
 use Test;
 use List::Agnostic;
 
-plan 28;
+plan 29;
 
 my $list;
 class MyList does List::Agnostic {
@@ -57,5 +57,7 @@ throws-like { @o.splice }, X::AdHoc,
   message => 'Can not splice values from an immutable MyOtherList';
 throws-like { @o.unshift(42) }, X::AdHoc,
   message => 'Can not unshift values to an immutable MyOtherList';
+throws-like { @o = () }, X::AdHoc,
+  message => 'Can not initialize values in an immutable MyOtherList';
 
 # vim: expandtab shiftwidth=4

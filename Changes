@@ -2,6 +2,11 @@ Revision history for List::Agnostic
 
 {{$NEXT}}
 
+0.0.7  2026-02-10T20:18:03+01:00
+    - Bump dependency on Array::Agnostic again for latest
+      fixes
+    - Attempting to re-initialize a list will fail
+
 0.0.6  2026-02-09T22:05:04+01:00
     - Bump dependency on Array::Agnostic, to get STORE
       method fixes

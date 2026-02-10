@@ -1,4 +1,4 @@
-use Array::Agnostic:ver<0.0.17+>:auth<zef:lizmat>;
+use Array::Agnostic:ver<0.0.18+>:auth<zef:lizmat>;
 
 role List::Agnostic does Array::Agnostic {
     method !cannot(str $action, str $preposition) is hidden-from-backtrace {
@@ -7,7 +7,7 @@ role List::Agnostic does Array::Agnostic {
 
 #---- Methods that need overriding ---------------------------------------------
 
-    method CLEAR() { self }
+    method CLEAR() { self }  # UNCOVERABLE
 
 #---- Methods not allowed by Lists ---------------------------------------------
 
@@ -15,9 +15,8 @@ role List::Agnostic does Array::Agnostic {
     method BIND-POS(|)   { self!cannot: "bind",       "to"   }
     method DELETE-POS(|) { self!cannot: "remove",     "from" }
 
-    method STORE(::?ROLE:D: \iterable, :$INITIALIZE!) {
-        my @values = iterable if $INITIALIZE;
-        self!cannot("initialize", "in") if @values;
+    method STORE(::?ROLE:D: \iterable, :$INITIALIZE) {
+        self!cannot("initialize", "in");  # UNCOVERABLE
     }
 
     method append(|)  { self!cannot: "append",  "to"   }

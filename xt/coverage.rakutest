@@ -1,10 +1,5 @@
-use Test;
+use Test::Coverage;
 
-plan 1;
-
-pass "for now";
-#use Test::Coverage;
-
-#must-be-complete;
+must-be-complete;
 
 # vim: expandtab shiftwidth=4
